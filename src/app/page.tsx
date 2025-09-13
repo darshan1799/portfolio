@@ -6,6 +6,7 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Education />
         <Certifications />
         <Contact />
+        <Toaster />
       </main>
     </>
   );
