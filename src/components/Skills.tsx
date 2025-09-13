@@ -1,9 +1,26 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJava, FaGitAlt, FaGithub } from 'react-icons/fa'
-import { SiNextdotjs, SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiPostman, SiJsonwebtokens, SiCplusplus } from 'react-icons/si'
-import { TbBrandCpp } from 'react-icons/tb'
+import { motion } from "framer-motion";
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaJava,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiJavascript,
+  SiMongodb,
+  SiExpress,
+  SiTailwindcss,
+  SiPostman,
+  SiJsonwebtokens,
+  SiCplusplus,
+} from "react-icons/si";
+import { TbBrandCpp } from "react-icons/tb";
 
 const skills = {
   "Front-End": [
@@ -16,25 +33,35 @@ const skills = {
   ],
   "Back-End": [
     { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
-    { name: "Express.js", icon: SiExpress, color: "text-gray-600 dark:text-gray-400" },
+    {
+      name: "Express.js",
+      icon: SiExpress,
+      color: "text-gray-600 dark:text-gray-400",
+    },
     { name: "JWT", icon: SiJsonwebtokens, color: "text-purple-500" },
-    { name: "NextAuth.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
+    {
+      name: "NextAuth.js",
+      icon: SiNextdotjs,
+      color: "text-black dark:text-white",
+    },
   ],
-  "Database": [
-    { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-  ],
-  "Languages": [
+  Database: [{ name: "MongoDB", icon: SiMongodb, color: "text-green-600" }],
+  Languages: [
     { name: "Java (Basic)", icon: FaJava, color: "text-red-600" },
     { name: "C", icon: TbBrandCpp, color: "text-blue-600" },
     { name: "C++", icon: SiCplusplus, color: "text-blue-700" },
   ],
-  "Tools": [
+  Tools: [
     { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
-    { name: "GitHub", icon: FaGithub, color: "text-gray-800 dark:text-gray-200" },
+    {
+      name: "GitHub",
+      icon: FaGithub,
+      color: "text-gray-800 dark:text-gray-200",
+    },
     { name: "REST APIs", icon: SiExpress, color: "text-indigo-500" },
     { name: "Postman", icon: SiPostman, color: "text-orange-500" },
   ],
-}
+};
 
 export default function Skills() {
   return (
@@ -49,7 +76,7 @@ export default function Skills() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             Skills & Technologies
           </h2>
-          
+
           <div className="space-y-8">
             {Object.entries(skills).map(([category, items], categoryIndex) => (
               <motion.div
@@ -62,10 +89,10 @@ export default function Skills() {
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
                   {category}
                 </h3>
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {items.map((skill, index) => {
-                    const Icon = skill.icon
+                    const Icon = skill.icon;
                     return (
                       <motion.div
                         key={skill.name}
@@ -83,7 +110,7 @@ export default function Skills() {
                           </span>
                         </div>
                       </motion.div>
-                    )
+                    );
                   })}
                 </div>
               </motion.div>
@@ -92,5 +119,5 @@ export default function Skills() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
