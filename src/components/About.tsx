@@ -56,7 +56,7 @@ export default function About() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="text-3xl font-bold text-green-600 dark:text-green-400">
-                  5+
+                  3+
                 </div>
                 <div className="text-gray-600 dark:text-gray-400">Projects</div>
               </motion.div>
@@ -67,7 +67,7 @@ export default function About() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">
-                  10+
+                  4+
                 </div>
                 <div className="text-gray-600 dark:text-gray-400">
                   Technologies

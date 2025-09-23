@@ -1,32 +1,37 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa'
-import Link from 'next/link'
+import { motion } from "framer-motion";
+import { FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
 
 const certifications = [
   {
     title: "JavaScript Algorithms and Data Structures",
     issuer: "FreeCodeCamp",
     year: "2024",
-    link: "#",
-    skills: ["Algorithms", "Data Structures", "JavaScript", "Problem Solving"]
+    link: "https://www.freecodecamp.org/certification/fcc4cf8491f-4f38-44b8-980f-d2156365fe3b/javascript-algorithms-and-data-structures",
+    skills: ["Algorithms", "Data Structures", "JavaScript", "Problem Solving"],
   },
   {
     title: "Frontend Developer (React)",
     issuer: "HackerRank",
     year: "2025",
-    link: "#",
-    skills: ["React.js", "Frontend Development", "Component Design", "State Management"]
+    link: "https://www.hackerrank.com/certificates/0ef043091d26",
+    skills: [
+      "React.js",
+      "Frontend Development",
+      "Component Design",
+      "State Management",
+    ],
   },
   {
     title: "Java (Basic)",
     issuer: "HackerRank",
     year: "2025",
-    link: "#",
-    skills: ["Java", "Object-Oriented Programming", "Basic Syntax"]
-  }
-]
+    link: "https://www.hackerrank.com/certificates/bc09ac06b80b",
+    skills: ["Java", "Object-Oriented Programming", "Basic Syntax"],
+  },
+];
 
 export default function Certifications() {
   return (
@@ -41,7 +46,7 @@ export default function Certifications() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             Certifications
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
               <motion.div
@@ -64,11 +69,11 @@ export default function Certifications() {
                     <FaExternalLinkAlt className="text-lg" />
                   </Link>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {cert.title}
                 </h3>
-                
+
                 <div className="flex items-center justify-between mb-4">
                   <p className="text-gray-600 dark:text-gray-400">
                     {cert.issuer}
@@ -77,7 +82,7 @@ export default function Certifications() {
                     {cert.year}
                   </span>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {cert.skills.map((skill) => (
                     <span
@@ -94,5 +99,5 @@ export default function Certifications() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,50 +1,49 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import Link from 'next/link'
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
 
 const projects = [
   {
     title: "AgriERP",
-    description: "An integrated ERP solution for small farmers in India using MERN stack. Includes modules for farm management, crop planning, sales, and inventory tracking.",
+    description:
+      "An integrated ERP solution for small farmers in India using MERN stack. Includes modules for farm management, crop planning, sales, and inventory tracking.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
-    github: "#",
-    live: "#",
+    live: "http://agrierp.farm/",
     highlights: [
       "Complete farm management system",
       "Crop planning and tracking",
       "Sales and inventory management",
-      "User authentication with JWT"
-    ]
+      "User authentication with JWT",
+    ],
   },
   {
     title: "Google Auto Review Reply Bot",
-    description: "A Next.js application that automates replying to Google reviews with AI-powered responses, saving time and ensuring consistent customer engagement.",
+    description:
+      "A Next.js application that automates replying to Google reviews with AI-powered responses, saving time and ensuring consistent customer engagement.",
     tech: ["Next.js", "TypeScript", "AI Integration", "REST API"],
-    github: "#",
-    live: "#",
     highlights: [
       "Automated review response generation",
       "AI-powered sentiment analysis",
       "Customizable response templates",
-      "Real-time Google Reviews integration"
-    ]
+      "Real-time Google Reviews integration",
+    ],
   },
   {
     title: "Coastal Threat Alert System",
-    description: "Developed during HackOut 25 at DA-IICT. A platform enabling government authorities to send real-time alerts for coastal threats to specific regions.",
+    description:
+      "Developed during HackOut 25 at DA-IICT. A platform enabling government authorities to send real-time alerts for coastal threats to specific regions.",
     tech: ["React.js", "Node.js", "WebSockets", "Maps API"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/darshan1799/hackathon-project",
     highlights: [
       "Real-time alert broadcasting",
       "Region-specific targeting",
       "Government authority dashboard",
-      "Emergency notification system"
-    ]
-  }
-]
+      "Emergency notification system",
+    ],
+  },
+];
 
 export default function Projects() {
   return (
@@ -59,7 +58,7 @@ export default function Projects() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             Featured Projects
           </h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -74,11 +73,11 @@ export default function Projects() {
                   <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
                     {project.description}
                   </p>
-                  
+
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Key Features:
@@ -89,7 +88,7 @@ export default function Projects() {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
@@ -100,23 +99,27 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex gap-4">
-                    <Link
-                      href={project.github}
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    >
-                      <FaGithub className="text-xl" />
-                      <span>Code</span>
-                    </Link>
-                    
-                    <Link
-                      href={project.live}
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    >
-                      <FaExternalLinkAlt className="text-lg" />
-                      <span>Live Demo</span>
-                    </Link>
+                    {project.github && (
+                      <Link
+                        href={project.github}
+                        className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                      >
+                        <FaGithub className="text-xl" />
+                        <span>Code</span>
+                      </Link>
+                    )}
+
+                    {project.live && (
+                      <Link
+                        href={project.live}
+                        className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                      >
+                        <FaExternalLinkAlt className="text-lg" />
+                        <span>Live Demo</span>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -125,5 +128,5 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
