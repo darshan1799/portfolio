@@ -42,8 +42,6 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         toast.success("Thank you for your message! I'll get back to you soon.");
         setFormData({ name: "", email: "", message: "" });
