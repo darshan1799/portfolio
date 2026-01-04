@@ -4,7 +4,16 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 
-const projects = [
+export interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  highlights?: string[];
+  live?: string;
+  github?: string;
+}
+
+const projects: Project[] = [
   {
     title: "AgriERP",
     description:
@@ -70,7 +79,7 @@ export default function Projects() {
                       Key Features:
                     </h4>
                     <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                      {project.highlights.map((highlight, i) => (
+                      {project?.highlights?.map((highlight, i) => (
                         <li key={i}>{highlight}</li>
                       ))}
                     </ul>
