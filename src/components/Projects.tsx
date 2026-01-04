@@ -30,19 +30,6 @@ const projects = [
       "Real-time Google Reviews integration",
     ],
   },
-  {
-    title: "Coastal Threat Alert System",
-    description:
-      "Developed during HackOut 25 at DA-IICT. A platform enabling government authorities to send real-time alerts for coastal threats to specific regions.",
-    tech: ["React.js", "Node.js", "WebSockets", "Maps API"],
-    github: "https://github.com/darshan1799/hackathon-project",
-    highlights: [
-      "Real-time alert broadcasting",
-      "Region-specific targeting",
-      "Government authority dashboard",
-      "Emergency notification system",
-    ],
-  },
 ];
 
 export default function Projects() {
