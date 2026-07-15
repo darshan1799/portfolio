@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Darshan Sutariya | Portfolio",
   description:
     "Portfolio of Darshan Sutariya - Full Stack Developer, Agritech Enthusiast",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 export default function RootLayout({
   children,
