@@ -17,30 +17,8 @@ interface SocialLink {
   href: string;
   label: string;
   icon: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
-
-const socialLinks: SocialLink[] = [
-  {
-    href: "https://github.com/darshan1799",
-    label: "GitHub profile",
-    icon: <FaGithub className="text-lg" />,
-  },
-  {
-    href: "https://linkedin.com/in/darshan-sutariya-10a9382b6",
-    label: "LinkedIn profile",
-    icon: <FaLinkedin className="text-lg" />,
-  },
-  {
-    href: "mailto:darshan.k.sutariya@gmail.com",
-    label: "Send email",
-    icon: <FaEnvelope className="text-lg" />,
-  },
-  {
-    href: "tel:+919313444195",
-    label: "Call phone number",
-    icon: <FaPhone className="text-lg" />,
-  },
-];
 
 const codeLines = [
   {
@@ -105,6 +83,51 @@ const codeLines = [
     ),
   },
   { indent: 0, content: <span className="text-slate-400">{"};"}</span> },
+];
+
+const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const isMobile =
+    typeof navigator !== "undefined" &&
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+  if (!isMobile) {
+    e.preventDefault();
+    const message = encodeURIComponent(
+      "Hi Darshan, I came across your portfolio. Could you please send me your resume?",
+    );
+    window.open(
+      `https://wa.me/919313444195?text=${message}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  }
+};
+
+const socialLinks: SocialLink[] = [
+  {
+    href: "https://github.com/darshan1799",
+    label: "GitHub profile",
+    icon: <FaGithub className="text-lg" />,
+    onClick: undefined,
+  },
+  {
+    href: "https://linkedin.com/in/darshan-sutariya-10a9382b6",
+    label: "LinkedIn profile",
+    icon: <FaLinkedin className="text-lg" />,
+    onClick: undefined,
+  },
+  {
+    href: "mailto:darshan.k.sutariya@gmail.com",
+    label: "Send email",
+    icon: <FaEnvelope className="text-lg" />,
+    onClick: undefined,
+  },
+  {
+    href: "tel:+919313444195",
+    label: "Call phone number",
+    icon: <FaPhone className="text-lg" />,
+    onClick: handlePhoneClick,
+  },
 ];
 
 export default function Hero() {
@@ -238,22 +261,25 @@ export default function Hero() {
             {...fadeUp(0.65)}
             className="mt-8 flex items-center justify-center gap-3 lg:justify-start"
           >
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  link.href.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-                aria-label={link.label}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.08] bg-white/5 text-[#94A3B8] transition-colors hover:border-[#3B82F6]/50 hover:text-[#3B82F6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
-              >
-                {link.icon}
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  onClick={link.onClick}
+                  rel={
+                    link.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  aria-label={link.label}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.08] bg-white/5 text-[#94A3B8] transition-colors hover:border-[#3B82F6]/50 hover:text-[#3B82F6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
+                >
+                  {link.icon}
+                </a>
+              );
+            })}
           </motion.div>
         </div>
 
