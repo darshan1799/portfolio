@@ -451,7 +451,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       {/* Status badge */}
       <span
-        className={`absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] font-medium sm:right-5 sm:top-2 ${
+        className={`absolute right-4 top-2 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] font-medium sm:right-5  ${
           project.status === "Ongoing"
             ? "border-blue-500/20 bg-blue-500/10 text-blue-400"
             : "border-emerald-500/20 bg-emerald-500/10 text-emerald-400"

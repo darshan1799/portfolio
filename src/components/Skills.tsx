@@ -1,26 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
   FaReact,
   FaNodeJs,
   FaHtml5,
   FaCss3Alt,
-  FaJava,
   FaGitAlt,
   FaGithub,
+  FaJava,
+  FaPython,
+  FaDocker,
 } from "react-icons/fa";
+
 import {
-  SiNextdotjs,
-  SiJavascript,
-  SiMongodb,
+  SiAuth0,
   SiExpress,
-  SiTailwindcss,
-  SiPostman,
+  SiJavascript,
   SiJsonwebtokens,
-  SiCplusplus,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNumpy,
+  SiOpenapiinitiative,
+  SiPandas,
+  SiPostman,
+  SiReacthookform,
+  SiReactquery,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+  SiZod,
 } from "react-icons/si";
-import { TbBrandCpp } from "react-icons/tb";
+
+import { RiShieldCheckLine } from "react-icons/ri";
 import {
   Monitor,
   Server,
@@ -50,9 +64,12 @@ const categories: Category[] = [
       { name: "React.js", icon: FaReact },
       { name: "Next.js", icon: SiNextdotjs },
       { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
       { name: "HTML", icon: FaHtml5 },
       { name: "CSS", icon: FaCss3Alt },
       { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "React Query", icon: SiReactquery },
+      // { name: "React Hook Form", icon: SiReacthookform },
     ],
   },
   {
@@ -61,32 +78,44 @@ const categories: Category[] = [
     skills: [
       { name: "Node.js", icon: FaNodeJs },
       { name: "Express.js", icon: SiExpress },
+      { name: "REST APIs", icon: SiOpenapiinitiative },
       { name: "JWT", icon: SiJsonwebtokens },
       { name: "NextAuth.js", icon: SiNextdotjs },
+      { name: "Bcrypt", icon: SiAuth0 }, // or use a Lock icon
+      { name: "Zod", icon: SiZod },
+      { name: "Yup", icon: RiShieldCheckLine }, // no official icon
     ],
   },
   {
     title: "Database",
     icon: DatabaseIcon,
-    skills: [{ name: "MongoDB", icon: SiMongodb }],
+    skills: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "SQL", icon: SiMysql },
+      { name: "Mongoose", icon: SiMongodb },
+      { name: "Supabase", icon: SiSupabase },
+    ],
   },
   {
     title: "Languages",
     icon: Code2,
     skills: [
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Python", icon: FaPython },
       { name: "Java (Basic)", icon: FaJava },
-      { name: "C", icon: TbBrandCpp },
-      { name: "C++", icon: SiCplusplus },
     ],
   },
   {
-    title: "Tools",
+    title: "Tools & Libraries",
     icon: Wrench,
     skills: [
       { name: "Git", icon: FaGitAlt },
       { name: "GitHub", icon: FaGithub },
-      { name: "REST APIs", icon: SiExpress },
       { name: "Postman", icon: SiPostman },
+      { name: "Docker", icon: FaDocker },
+      { name: "Pandas", icon: SiPandas },
+      { name: "NumPy", icon: SiNumpy },
     ],
   },
 ];
