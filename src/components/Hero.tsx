@@ -127,7 +127,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Introduction"
-      className="relative min-h-screen overflow-hidden bg-[#0F172A] flex items-center"
+      className="relative min-h-screen overflow-hidden bg-[#0F172A] flex items-center pt-3 sm:pt-0"
     >
       {/* Background layer */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -310,7 +310,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute sm:block hidden bottom-8 left-1/2 -translate-x-1/2"
       >
         <Link
           href="/"
