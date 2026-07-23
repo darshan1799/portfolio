@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import { ArrowRight, Download, ChevronDown } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 import Link from "next/link";
 
 const highlights = [
@@ -117,6 +118,12 @@ const socialLinks: SocialLink[] = [
     onClick: undefined,
   },
   {
+    href: "https://leetcode.com/u/cAibDenhxH/",
+    label: "LeetCode profile",
+    icon: <SiLeetcode className="text-lg" />,
+    onClick: undefined,
+  },
+  {
     href: "mailto:darshan.k.sutariya@gmail.com",
     label: "Send email",
     icon: <FaEnvelope className="text-lg" />,
@@ -129,7 +136,6 @@ const socialLinks: SocialLink[] = [
     onClick: handlePhoneClick,
   },
 ];
-
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 

@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { SiLeetcode } from "react-icons/si";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -169,7 +170,7 @@ export default function Contact() {
             </div>
 
             {/* Social row */}
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-5 gap-3">
               {[
                 {
                   href: "mailto:darshan.k.sutariya@gmail.com",
@@ -193,6 +194,12 @@ export default function Contact() {
                   href: "https://linkedin.com/in/darshan-sutariya-10a9382b6",
                   icon: FaLinkedin,
                   label: "LinkedIn",
+                  onClick: undefined,
+                },
+                {
+                  href: "https://leetcode.com/u/cAibDenhxH/",
+                  label: "LeetCode",
+                  icon: SiLeetcode,
                   onClick: undefined,
                 },
               ].map(({ href, icon: Icon, label, onClick }) => (
